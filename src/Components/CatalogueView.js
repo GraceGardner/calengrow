@@ -1,6 +1,7 @@
 import React from 'react'
-import SeedForm from 'SeedForm'
-import SeedCatalogue from 'SeedCatalogue'
+import SeedForm from './SeedForm'
+import SeedCatalogue from './SeedCatalogue'
+import logo from '../assets/calengrow-logo.png'
 
 const CatalogueView= () => {
   return (
@@ -15,7 +16,7 @@ const CatalogueView= () => {
      </div>
      <div class='catalogue-view-main'>
       <SeedForm/>
-      <SeedSchedule/>
+      <SeedCatalogue/>
      </div>
     </div>
   )
