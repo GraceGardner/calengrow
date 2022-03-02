@@ -1,4 +1,6 @@
 import React from 'react'
+import UserInfo from 'UserInfo'
+import SeedSchedule from 'SeedSchedule'
 
 const Dashboard= () => {
   return (
@@ -10,7 +12,9 @@ const Dashboard= () => {
          alt='Calengrow Logo'
        />
      </div>
-     <div>
+     <div class='dashboard-main'>
+      <UserInfo/>
+      <SeedSchedule/>
      </div>
     </div>
   )
