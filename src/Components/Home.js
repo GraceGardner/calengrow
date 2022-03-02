@@ -13,8 +13,9 @@ const Home = () => {
           src={logo}
           alt='Calengrow Logo'
         />
-        <h2>Let's get growing<h2>
+        <h1>Let's get growing<h1>
         <button className='account-button'>your account</button>
+        <h2>Your next planting</h2>
         <NextCard />
       </div>
     </div>
