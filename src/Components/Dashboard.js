@@ -11,6 +11,7 @@ const Dashboard= () => {
          src={logo}
          alt='Calengrow Logo'
        />
+       <button className='catalogue-button'>your catalogue</button>
      </div>
      <div class='dashboard-main'>
       <UserInfo/>
