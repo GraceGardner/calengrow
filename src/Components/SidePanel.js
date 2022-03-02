@@ -1,7 +1,10 @@
 import React from 'react'
 
 const SidePanel = () => {
-  return ()
+  return (
+    <div className='blue-box'>
+    </div>
+  )
 }
 
 export default SidePanel
