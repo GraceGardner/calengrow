@@ -7,7 +7,7 @@ const SeedForm = () => {
       <h1>Grow your seed collection</h1>
      </div>
      <form>
-      <input type="text" placeholder="Seed Name">
+      <input type="text" placeholder="Seed Name"/>
       <button type="submit">Add</button>
      </form>
     </div>

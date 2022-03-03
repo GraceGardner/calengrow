@@ -7,7 +7,7 @@ const SeedCatalogue = () => {
       <h1>Your Catalogue</h1>
      </div>
      <form>
-      <input type="text" placeholder="Search Seeds.." name="search">
+      <input type="text" placeholder="Search Seeds.." name="search"/>
       <button type="submit">???</button>
      </form>
      <div>Seeds for planting</div>

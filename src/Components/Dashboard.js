@@ -1,6 +1,7 @@
 import React from 'react'
-import UserInfo from 'UserInfo'
-import SeedSchedule from 'SeedSchedule'
+import UserInfo from './UserInfo'
+import SeedSchedule from './SeedSchedule'
+import logo from '../assets/calengrow-logo.png'
 
 const Dashboard= () => {
   return (
