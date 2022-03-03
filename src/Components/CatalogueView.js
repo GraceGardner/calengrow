@@ -19,7 +19,7 @@ const CatalogueView= () => {
         <button className='account-button'>your account</button>
        </Link>
      </div>
-     <div class='catalogue-view-main'>
+     <div className='catalogue-view-main'>
       <SeedForm/>
       <SeedCatalogue/>
      </div>
