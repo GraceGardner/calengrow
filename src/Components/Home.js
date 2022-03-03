@@ -1,11 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../assets/calengrow-logo.png'
 import SidePanel from './SidePanel'
 import NextCard from './NextCard'
 
 const Home = () => {
-  const navigate = useNavigate()
 
 
 
@@ -19,7 +18,9 @@ const Home = () => {
           alt='Calengrow Logo'
         />
         <h1>Let's get growing</h1>
-        <button onClick={navigate('/dashboard')} className='account-button'>your account</button>
+        <Link to={'/dashboard'}>
+          <button className='account-button'>your account</button>
+        </Link>
         <h2>Your next planting</h2>
         <NextCard />
       </div>
