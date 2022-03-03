@@ -1,0 +1,9 @@
+@import './_variables';
+@import './_mixins';
+
+.blue-box {
+  flex-grow: inherit;
+  @include background();
+  height: 100vh;
+  width: 50vw;
+}

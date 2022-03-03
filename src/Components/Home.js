@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/calengrow-logo.png'
 import SidePanel from './SidePanel'
 import NextCard from './NextCard'
+import '../Styles/Home.scss'
 
 const Home = () => {
 
@@ -11,7 +12,7 @@ const Home = () => {
   return (
     <div className='home-container'>
       <SidePanel />
-      <div>
+      <div className='right-home-container'>
         <img
           className='logo'
           src={logo}
