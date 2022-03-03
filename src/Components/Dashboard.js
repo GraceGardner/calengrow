@@ -1,19 +1,25 @@
 import React from 'react'
-import UserInfo from 'UserInfo'
-import SeedSchedule from 'SeedSchedule'
+import { Link } from 'react-router-dom'
+import UserInfo from './UserInfo'
+import SeedSchedule from './SeedSchedule'
+import logo from '../assets/calengrow-logo.png'
 
 const Dashboard= () => {
   return (
     <div className='dashboard-container'>
      <div>
-       <img
-         className='logo'
-         src={logo}
-         alt='Calengrow Logo'
-       />
-       <button className='catalogue-button'>your catalogue</button>
+      <Link to={'/'}>
+        <img
+        className='logo'
+        src={logo}
+        alt='Calengrow Logo'
+        />
+      </Link>
+       <Link to={'/catalogue'}>
+        <button className='catalogue-button'>your catalogue</button>
+       </Link>
      </div>
-     <div class='dashboard-main'>
+     <div className='dashboard-main'>
       <UserInfo/>
       <SeedSchedule/>
      </div>

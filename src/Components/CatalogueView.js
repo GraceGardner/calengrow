@@ -1,21 +1,27 @@
 import React from 'react'
-import SeedForm from 'SeedForm'
-import SeedCatalogue from 'SeedCatalogue'
+import { Link } from 'react-router-dom'
+import SeedForm from './SeedForm'
+import SeedCatalogue from './SeedCatalogue'
+import logo from '../assets/calengrow-logo.png'
 
 const CatalogueView= () => {
   return (
     <div className='catalogue-view-container'>
      <div>
-       <img
-         className='logo'
-         src={logo}
-         alt='Calengrow Logo'
-       />
-       <button className='account-button'>your account</button>
+      <Link to={'/'}>
+        <img
+        className='logo'
+        src={logo}
+        alt='Calengrow Logo'
+        />
+      </Link>
+       <Link to={'/dashboard'}>
+        <button className='account-button'>your account</button>
+       </Link>
      </div>
-     <div class='catalogue-view-main'>
+     <div className='catalogue-view-main'>
       <SeedForm/>
-      <SeedSchedule/>
+      <SeedCatalogue/>
      </div>
     </div>
   )
