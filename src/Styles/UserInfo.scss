@@ -1,0 +1,34 @@
+@import './_variables';
+@import './_mixins';
+
+.user-container {
+  border: 3px solid black;
+  background-color: $white-opc;
+  width: 40vw;
+  height: 50vh;
+  margin: 5%;
+}
+
+.user-header {
+  border-bottom: 3px solid black;
+  background-color: $white-opc;
+  width: 100%;
+  margin: 0;
+  padding: .15%;
+}
+
+.edit-button {
+  @include turquoise-button();
+}
+
+.user-details {
+  padding: 3%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bold {
+  font-weight: bold;
+}

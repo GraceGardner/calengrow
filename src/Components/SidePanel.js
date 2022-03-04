@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Styles/SidePanel.scss'
 
 const SidePanel = () => {
   return (

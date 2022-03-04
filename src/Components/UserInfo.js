@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import UserForm from './UserForm'
+import '../Styles/UserInfo.scss'
 
 const UserInfo = () => {
 
@@ -9,19 +10,27 @@ const UserInfo = () => {
     setClick(!clicked)
   }
 
+  const userInformation = () => {
+    return(
+      <div className='user-container'>
+        <div className='user-header'>
+          <h1>Hello username</h1>
+        </div>
+        <div className='user-details'>
+          <p><span className='bold'>zipcode:</span> userszip</p>
+          <p><span className='bold'>hardiness zone:</span>  usershardinesszone</p>
+          <p><span className='bold'>last frost:</span>  lostfrostdate</p>
+          <button onClick={toggleClick}className='edit-button'>edit account</button>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className='user-container'>
-     <div>
-      <h1>Hello username</h1>
-     </div>
-     <div>
-      <p>zipcode: userszip</p>
-      <p>hardiness zone: usershardinesszone</p>
-      <p>last frost: lostfrostdate</p>
-      <button onClick={toggleClick}className='edit-button'>edit account</button>
-     </div>
-     {clicked && <UserForm toggleClick={toggleClick}/>}
-    </div>
+    <>
+      {!clicked && userInformation()}
+      {clicked && <UserForm toggleClick={toggleClick}/>}
+    </>
   )
 }
 
