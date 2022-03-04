@@ -2,28 +2,37 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import UserInfo from './UserInfo'
 import SeedSchedule from './SeedSchedule'
+import Background from './Background'
+import Grass from './Grass'
 import logo from '../assets/calengrow-logo.png'
+import '../Styles/Dashboard.scss'
 
-const Dashboard= () => {
+const Dashboard = () => {
+
+
   return (
+    <>
     <div className='dashboard-container'>
-     <div>
-      <Link to={'/'}>
-        <img
-        className='logo'
-        src={logo}
-        alt='Calengrow Logo'
-        />
+    <div className='dashboard-header'>
+     <Link to={'/'}>
+       <img
+       className='logo'
+       src={logo}
+       alt='Calengrow Logo'
+       />
+     </Link>
+      <Link to={'/catalogue'}>
+       <button className='catalogue-button'>your catalogue</button>
       </Link>
-       <Link to={'/catalogue'}>
-        <button className='catalogue-button'>your catalogue</button>
-       </Link>
-     </div>
-     <div className='dashboard-main'>
-      <UserInfo/>
-      <SeedSchedule/>
-     </div>
     </div>
+    <div className='dashboard-main'>
+     <UserInfo/>
+     <SeedSchedule/>
+    </div>
+    </div>
+    <Background/>
+    <Grass/>
+    </>
   )
 }
 
