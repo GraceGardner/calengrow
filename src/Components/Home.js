@@ -1,13 +1,46 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/calengrow-logo.png'
+import Background from './Background'
 import SidePanel from './SidePanel'
 import NextCard from './NextCard'
+import SignupForm from './SignupForm'
+import LoginForm from './LoginForm'
+import {UserContext} from '../Contexts/UserContext'
 import '../Styles/Home.scss'
 
 const Home = () => {
 
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [signup, setSignup] = useState(false)
+  const {user} = useContext(UserContext)
 
+  const toggleSignup = () => {
+    setSignup(!signup)
+  }
+
+  const toggleLoggedIn = () => {
+    setLoggedIn(!loggedIn)
+  }
+  console.log(user)
+
+  const display = () => {
+    if(user.token){
+      return(
+        <Link to={'/dashboard'}>
+          <button className='account-button'>your account</button>
+        </Link>
+      )
+    } else {
+      return (
+      <>
+        <button className='sign-up-button' onClick={toggleSignup}>sign up</button>
+        <button className='sign-up-button' onClick={toggleLoggedIn}>login</button>
+      </>
+      )
+    }
+
+  }
 
   return (
     <div className='home-container'>
@@ -19,11 +52,12 @@ const Home = () => {
           alt='Calengrow Logo'
         />
         <h1>Let's get growing</h1>
-        <Link to={'/dashboard'}>
-          <button className='account-button'>your account</button>
-        </Link>
+        {display()}
+        {signup && <SignupForm/>}
+        {loggedIn && <LoginForm/>}
         <h2>Your next planting</h2>
         <NextCard />
+        <Background />
       </div>
     </div>
   )
