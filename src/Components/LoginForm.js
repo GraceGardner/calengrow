@@ -1,16 +1,23 @@
 import React, {useState, useContext} from 'react'
+import { useNavigate } from 'react-router-dom'
 import {login} from '../apiCalls.js'
 import {UserContext} from '../Contexts/UserContext'
 
-const LoginForm = () => {
+const LoginForm = ({setHomeError}) => {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const {setUser} = useContext(UserContext)
+  const navigate = useNavigate()
 
   const loginUser = (event) => {
     event.preventDefault()
     login({userEmail, userPassword})
-    .then(data => setUser(data))
+    .then(data => {
+      localStorage.setItem('user', JSON.stringify(data))
+      setUser(data)
+      navigate('/dashboard')
+    })
+    .catch(error => setHomeError(error))
   }
 
   return (

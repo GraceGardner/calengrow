@@ -4,7 +4,11 @@ export const UserContext = React.createContext()
 
 export const UserProvider = ({children}) => {
 
-  const [user, setUser] = useState({})
+  const storedUser = JSON.parse(localStorage.getItem('user')) || {}
+
+  const [user, setUser] = useState(storedUser)
+
+
 
     return(
     <UserContext.Provider value={{ user, setUser }}>
