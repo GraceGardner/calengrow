@@ -2,10 +2,9 @@ import React, { useState, useContext } from 'react'
 import { UserContext } from '../Contexts/UserContext'
 import { getFilteredSeeds, addToCatalogue } from '../apiCalls.js'
 
-const SeedForm = ({setCatalogueError}) => {
+const SeedForm = ({setCatalogueError, updateCatalogue}) => {
 
   const {user} = useContext(UserContext)
-  const [seedString, setSeedString] = useState('')
   const [resData, setResData] = useState([])
 
   const inputSeed = (event) => {
@@ -17,7 +16,9 @@ const SeedForm = ({setCatalogueError}) => {
   const selectSeed = (event) => {
     event.preventDefault()
     addToCatalogue(user.token, event.target.value)
-    .then(data => console.log(data))
+    .then(data => {
+      updateCatalogue()
+      })
     .catch(error => setCatalogueError(error))
   }
 
@@ -47,7 +48,6 @@ const SeedForm = ({setCatalogueError}) => {
         <div className='seed-dropdown'>
           {resData.length > 0 && addSeedDropdown}
         </div>
-      <button type="submit">Add</button>
      </form>
     </div>
   )
