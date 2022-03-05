@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
-import {getFilteredSeeds} from '../apiCalls.js'
+import React, { useState, useContext } from 'react'
+import {UserContext} from '../Contexts/UserContext'
+import {getFilteredSeeds, addToCatalogue} from '../apiCalls.js'
 
 const SeedForm = () => {
 
+  const {user} = useContext(UserContext)
   const [seedString, setSeedString] = useState('')
   const [resData, setResData] = useState([])
 
@@ -13,12 +15,23 @@ const SeedForm = () => {
   }
 
   const selectSeed = (event) => {
-    setSeedString(event.target.value)
+    event.preventDefault()
+    console.log(user.token)
+    console.log(event.target.value)
+    addToCatalogue(user.token, event.target.value)
+    .then(data => console.log(data))
   }
 
   const addSeedDropdown =
     resData.map(seed => {
-      return (<button onClick={event => selectSeed(event)}>{seed.name}</button>)
+      return (
+        <button
+          onClick={event => selectSeed(event)}
+          value={seed.id}
+        >
+            {seed.name}
+        </button>
+      )
     })
 
   return (
@@ -27,7 +40,11 @@ const SeedForm = () => {
       <h1>Grow your seed collection</h1>
      </div>
      <form>
-      <input type="text" placeholder="Seed Name" onChange={event => inputSeed(event)}/>
+      <input
+        type="text"
+        placeholder="Seed Name"
+        onChange={event => inputSeed(event)}
+      />
         <div className='seed-dropdown'>
           {resData.length > 0 && addSeedDropdown}
         </div>
