@@ -3,14 +3,16 @@ import ScheduleCard from './ScheduleCard'
 import {UserContext} from '../Contexts/UserContext'
 import {getCatalogue} from '../apiCalls'
 
-const SeedSchedule = () => {
+const SeedSchedule = ({setDashboardError}) => {
   const {user} = useContext(UserContext)
   const [seedsInCatalogue, setSeedsInCatalogue] = useState([])
 
   useEffect(() => {
     if(user.token) {
     getCatalogue(user.token)
-    .then(data => setSeedsInCatalogue(data))}
+    .then(data => setSeedsInCatalogue(data))
+    .catch(error => setDashboardError(error))
+    }
   })
 
   const displaySchedule =

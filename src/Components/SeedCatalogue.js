@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SeedCatalogue = () => {
+const SeedCatalogue = ({setCatalogueError}) => {
   return (
     <div className='seed-catalogue-container'>
      <div>
@@ -8,7 +8,7 @@ const SeedCatalogue = () => {
      </div>
      <form>
       <input type="text" placeholder="Search Seeds.." name="search"/>
-      <button type="submit">???</button>
+      <button type="submit">search</button>
      </form>
      <div>Seeds for planting</div>
     </div>

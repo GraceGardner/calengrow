@@ -2,8 +2,8 @@
 @import './_mixins';
 
 .blue-box {
+  z-index: -1;
   flex-grow: inherit;
-  @include background();
   height: 100vh;
   width: 50vw;
 }
