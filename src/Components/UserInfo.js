@@ -15,7 +15,7 @@ const UserInfo = () => {
     return(
       <div className='user-container'>
         <div className='user-header'>
-          <h1>Hello {user.nickname}!</h1>
+          <h1>Hello {user.nickname}</h1>
         </div>
         <div className='user-details'>
           <p><span className='bold'>zipcode:</span> {user.zipcode}</p>
