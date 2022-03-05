@@ -1,7 +1,15 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import ScheduleCard from './ScheduleCard'
+import {UserContext} from '../Contexts/UserContext'
 
 const SeedSchedule = () => {
+  const {user} = useContext(UserContext)
+
+  useEffect(() => {
+    getCatalogue(user.token)
+    .then(data => (data))
+  })
+
   return (
     <div className='schedule-container'>
 
