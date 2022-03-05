@@ -56,7 +56,7 @@ export const logout = (token) => {
 }
 
 export const addToCatalogue = (token, seedId) => {
-  return fetch('https://planty-api.herokuapp.com/api/v1/catalog', {
+  return fetch('https://planty-api.herokuapp.com/api/v1/seed_catalogs', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export const addToCatalogue = (token, seedId) => {
 }
 
 export const getCatalogue = (token) => {
-  return fetch('https://planty-api.herokuapp.com/api/v1/catalog', {
+  return fetch('https://planty-api.herokuapp.com/api/v1/seed_catalogs', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
