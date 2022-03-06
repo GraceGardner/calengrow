@@ -15,7 +15,7 @@ const SeedSchedule = () => {
     .then(data => setSeedsInCatalogue(data))
     .catch(error => setError(error))
     }
-  })
+  }, [])
 
   const formatDate = (date) => {
     let [month, day, year] = date.split('-');
@@ -52,7 +52,8 @@ const SeedSchedule = () => {
     plantDate = changeMonthsToDays(type.planting_date)
   }
   let plantingDatestamp = new Date(lastFrost).setDate(plantDate)
-  return new Date(plantingDatestamp)
+  return plantingDatestamp
+    // return new Date(plantingDatestamp)
  }
 
   const createSchedule = () => {
@@ -70,7 +71,7 @@ const SeedSchedule = () => {
 
   const displaySchedule = () => {
     const schedule = createSchedule()
-    const keys = Object.keys(schedule)
+    let keys = Object.keys(schedule).sort()
     return keys.map(key => {
       return (
         <ScheduleCard key={key} date={key} seeds={schedule[key]}/>

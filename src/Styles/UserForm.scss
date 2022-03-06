@@ -1,2 +1,26 @@
 @import './_variables';
 @import './_mixins';
+
+
+.update-user-button {
+  @include turquoise-button();
+}
+
+.update-user-button {
+  @include button-hover()
+}
+
+.user-update-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.update-user-form {
+  width: 35vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

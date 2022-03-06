@@ -1,178 +1,352 @@
 @import './_variables';
 @import './_mixins';
 
-//~~~~~~~~~~ grass ~~~~~~~~~~~~
+//~~~~~~~~~~ grass desktop ~~~~~~~~~~~~
+@media only screen and (min-width: 992px) {
+  .grass-container {
+    position: fixed;
+    bottom: -2%;
+    display: flex;
+    z-index: 1;
+    width: 100vw;
+    height: 14vh;
+  }
 
-.grass-container {
+  .grass-one {
+    width: 18vw;
+    position: absolute;
+  }
+
+  .grass-two {
+    width: 18vw;
+    position: absolute;
+    right: 0;
+  }
+  .grass-three {
+    width: 18vw;
+    position: absolute;
+    right: 20%;
+  }
+  .grass-four {
+    width: 18vw;
+    position: absolute;
+    right: 40%;
+  }
+  .grass-five {
+    width: 18vw;
+    position: absolute;
+    left: 20%;
+  }
+  .grass-six {
+    width: 18vw;
+    position: absolute;
+    left: 5%;
+  }
+  .grass-seven {
+    width: 18vw;
+    position: absolute;
+    right: 5%;
+  }
+  .grass-eight {
+    width: 18vw;
+    position: absolute;
+    right: 25%
+  }
+  .grass-nine {
+    width: 18vw;
+    position: absolute;
+    right: 45%;
+  }
+  .grass-ten {
+    width: 18vw;
+    position: absolute;
+    left: 25%;
+  }
+  .grass-eleven {
+    width: 18vw;
+    position: absolute;
+    left: 10%;
+  }
+  .grass-twelve {
+    width: 18vw;
+    position: absolute;
+    left: 15%;
+  }
+  .grass-thirteen {
+    width: 18vw;
+    position: absolute;
+    right: 8%;
+  }
+  .grass-fourteen {
+    width: 18vw;
+    position: absolute;
+    right: 12%;
+  }
+  .grass-fifteen {
+    width: 18vw;
+    position: absolute;
+    right: 30%;
+  }
+  .grass-sixteen {
+    width: 18vw;
+    position: absolute;
+    left: 30%;
+  }
+  .grass-seventeen {
+    width: 18vw;
+    position: absolute;
+    right: -2%;
+  }
+  .grass-eighteen {
+    width: 18vw;
+    position: absolute;
+    left: -2%;
+  }
+  .grass-nineteen {
+    width: 18vw;
+    position: absolute;
+    left: 18%;
+  }
+  .grass-twenty {
+    width: 18vw;
+    position: absolute;
+    left: 6%;
+  }
+  .grass-twenty-one {
+    width: 18vw;
+    position: absolute;
+    left: 2%;
+  }
+  .grass-twenty-two {
+    width: 18vw;
+    position: absolute;
+    right: 35%;
+  }
+  .grass-twenty-three {
+    width: 18vw;
+    position: absolute;
+    left: 35%;
+  }
+  .grass-twenty-four {
+    width: 18vw;
+    position: absolute;
+    left: 10%;
+  }
+  .grass-twenty-five {
+    width: 18vw;
+    position: absolute;
+    left: 15%;
+  }
+  .grass-twenty-six {
+    width: 18vw;
+    position: absolute;
+    left: 33%;
+  }
+  .grass-twenty-seven {
+    width: 18vw;
+    position: absolute;
+    left: -2%;
+  }
+  .grass-twenty-eight {
+    width: 18vw;
+    position: absolute;
+    left: 20%;
+  }
+  .grass-twenty-nine {
+    width: 18vw;
+    position: absolute;
+    right: 20%;
+  }
+  .grass-thirty {
+    width: 18vw;
+    position: absolute;
+    right: 35%;
+  }
+  .grass-thirty-one {
+    width: 18vw;
+    position: absolute;
+    right: 15%;
+  }
+  .grass-thirty-two {
+    width: 18vw;
+    position: absolute;
+    right: 1%;
+  }
+}
+
+//~~~~~~~~~~~~~~~ Grass Mobile ~~~~~~~~~~~~~
+
+@media only screen and (max-width: 991px) {
+  .grass-container {
   position: fixed;
-  bottom: -2%;
+  bottom: -11%;
   display: flex;
   z-index: 1;
   width: 100vw;
-  height: 14vh;
+  height: 18vh;
 }
 
 .grass-one {
-  width: 18vw;
+width: 40vw;
   position: absolute;
 }
 
 .grass-two {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 0;
 }
 .grass-three {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 20%;
 }
 .grass-four {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 40%;
 }
 .grass-five {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 20%;
 }
 .grass-six {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 5%;
 }
 .grass-seven {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 5%;
 }
 .grass-eight {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 25%
 }
 .grass-nine {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 45%;
 }
 .grass-ten {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 25%;
 }
 .grass-eleven {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 10%;
 }
 .grass-twelve {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 15%;
 }
 .grass-thirteen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 8%;
 }
 .grass-fourteen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 12%;
 }
 .grass-fifteen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 30%;
 }
 .grass-sixteen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 30%;
 }
 .grass-seventeen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: -2%;
 }
 .grass-eighteen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: -2%;
 }
 .grass-nineteen {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 18%;
 }
 .grass-twenty {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 6%;
 }
 .grass-twenty-one {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 2%;
 }
 .grass-twenty-two {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 35%;
 }
 .grass-twenty-three {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 35%;
 }
 .grass-twenty-four {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 10%;
 }
 .grass-twenty-five {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 15%;
 }
 .grass-twenty-six {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 33%;
 }
 .grass-twenty-seven {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: -2%;
 }
 .grass-twenty-eight {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   left: 20%;
 }
 .grass-twenty-nine {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 20%;
 }
 .grass-thirty {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 35%;
 }
 .grass-thirty-one {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 15%;
 }
 .grass-thirty-two {
-  width: 18vw;
+width: 40vw;
   position: absolute;
   right: 1%;
 }
-
+}
 .grass-one:hover,
 .grass-two:hover,
 .grass-three:hover,

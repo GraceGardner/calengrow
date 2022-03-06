@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import {useNavigate} from 'react-router-dom'
 import {UserContext} from '../Contexts/UserContext'
 import UserForm from './UserForm'
 import '../Styles/UserInfo.scss'
@@ -6,6 +7,13 @@ import '../Styles/UserInfo.scss'
 const UserInfo = () => {
   const {user} = useContext(UserContext)
   const [ clicked, setClick ] = useState(false)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(!user.token){
+      navigate('/')
+    }
+  }, [])
 
   const toggleClick = () => {
     setClick(!clicked)

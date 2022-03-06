@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import {login} from '../apiCalls.js'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
+import '../Styles/LoginForm.scss'
 
 const LoginForm = () => {
   const [userEmail, setUserEmail] = useState('')
@@ -24,7 +25,7 @@ const LoginForm = () => {
 
   return (
     <div className='signup-container'>
-      <form>
+      <form className='signup-form'>
         <input
           type='text'
           placeholder='email'
@@ -35,7 +36,10 @@ const LoginForm = () => {
           placeholder='password'
           onChange={event => setUserPassword(event.target.value)}
         ></input>
-        <button onClick={event => loginUser(event)} type="submit">login</button>
+        <button
+          className='submit-login-button'
+          onClick={event => loginUser(event)}
+          type="submit">login</button>
       </form>
     </div>
   )
