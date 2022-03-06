@@ -2,15 +2,17 @@ import React, { useState, useContext } from 'react'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
 import CatalogueCard from './CatalogueCard'
-import {getCatalogue, getFilteredSeeds} from '../apiCalls.js'
+import {getCatalogue, getFilteredSeeds, getFilteredUserSeeds} from '../apiCalls.js'
 import '../Styles/SeedCatalogue.scss'
 
-const SeedCatalogue = ({userCatalogue}) => {
+const SeedCatalogue = ({userCatalogue, setUserCatalogue, updateCatalogue}) => {
 
   const [seedView, setSeedView] = useState(false)
   const [selectedType, setSelectedType] = useState({})
+  const [viewAll, setViewAll] = useState(true)
   const [header, setHeader] = useState()
   const {setError} = useContext(ErrorContext)
+  const {user} = useContext(UserContext)
 
   const toggleSeedView = () => {
     setSeedView(!seedView)
@@ -29,6 +31,20 @@ const SeedCatalogue = ({userCatalogue}) => {
       setHeader('seed details')
     })
     .catch(error => setError(error))
+  }
+
+  const searchUserSeeds = (event) => {
+    event.preventDefault()
+    getFilteredUserSeeds(event.target.value, user.token)
+    .then(data => {
+      setUserCatalogue(data)
+      setViewAll(false)
+    })
+  }
+
+  const clearSearch = () => {
+    updateCatalogue()
+    setViewAll(true)
   }
 
   const generateCatalogue = userCatalogue.map(
@@ -54,7 +70,13 @@ const SeedCatalogue = ({userCatalogue}) => {
           type="text"
           placeholder="Search Seeds.."
           name="search"
+          onChange={event => searchUserSeeds(event)}
         />
+        {!viewAll &&
+          <button
+            className='clear-button'
+            onClick={clearSearch}
+          >view all seeds</button>}
         </form>
         <div className='catalogue-list-container'>
         {generateCatalogue}

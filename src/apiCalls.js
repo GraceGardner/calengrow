@@ -11,6 +11,16 @@ export const getFilteredSeeds = (name) => {
   .then(response => handleError(response))
 }
 
+export const getFilteredUserSeeds = (name, token) => {
+  return fetch(`https://planty-api.herokuapp.com/api/v1/seed_catalogs?name=${name}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `${token}`
+    }
+  })
+  .then(response => handleError(response))
+}
+
 export const registerUser = (user) => {
   return fetch('https://planty-api.herokuapp.com/api/v1/users', {
   method: 'POST',

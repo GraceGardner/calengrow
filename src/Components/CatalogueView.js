@@ -42,7 +42,11 @@ const CatalogueView= () => {
      </div>
      <div className='catalogue-view-main'>
       <SeedForm updateCatalogue={updateCatalogue}/>
-      <SeedCatalogue userCatalogue={userCatalogue} />
+      <SeedCatalogue
+        userCatalogue={userCatalogue}
+        setUserCatalogue={setUserCatalogue}
+        updateCatalogue={updateCatalogue}
+      />
      </div>
     </div>
     <Background/>
