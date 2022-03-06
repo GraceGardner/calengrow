@@ -88,10 +88,28 @@ export const patchPlant = (token, id) => {
       "Authorization": `${token}`
     },
     body: JSON.stringify({
-      "seed_catalog": {
-        "planted": true
+      seed_catalog: {
+        planted: true
       }
     })
+  })
+  .then(response => handleError(response))
+}
+
+export const patchUser = (user) => {
+  return fetch(`https://planty-api.herokuapp.com/api/v1/users`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `${user.token}`
+    },
+    body: JSON.stringify({
+      user: {
+        email: user.email,
+        nickname: user.nickname,
+        zipcode: user.zipcode
+    }
+  })
   })
   .then(response => handleError(response))
 }
