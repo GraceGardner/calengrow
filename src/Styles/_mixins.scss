@@ -45,6 +45,7 @@
 }
 
 @mixin list-button-hover() {
+  cursor: pointer;
   background: transparent;
   background-color: $turquoise;
   border: none;

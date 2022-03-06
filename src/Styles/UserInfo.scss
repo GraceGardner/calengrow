@@ -1,20 +1,41 @@
 @import './_variables';
 @import './_mixins';
 
-.user-container {
-  border: 3px solid black;
-  background-color: $white-opc;
-  width: 40vw;
-  height: 50vh;
-  margin: 5%;
+@media only screen and (min-width: 992px) {
+
+  .user-container {
+    border: 3px solid black;
+    background-color: $white-opc;
+    width: 40vw;
+    height: 50vh;
+    margin: 5%;
+  }
+
+  .user-details {
+    padding: 3%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
-.user-header {
-  border-bottom: 3px solid black;
-  background-color: $white-opc;
-  width: 100%;
-  margin: 0;
-  padding: .15%;
+@media only screen and (max-width: 991px) {
+  .user-container {
+    border: 3px solid black;
+    background-color: $white-opc;
+    width: 90vw;
+    height: 33vh;
+    margin: 5%;
+  }
+
+  .user-details {
+    padding: 3%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
 .edit-button {
@@ -25,12 +46,12 @@
   @include button-hover();
 }
 
-.user-details {
-  padding: 3%;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.user-header {
+  border-bottom: 3px solid black;
+  background-color: $white-opc;
+  width: 100%;
+  margin: 0;
+  padding: .15%;
 }
 
 .bold {
