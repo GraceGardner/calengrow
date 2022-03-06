@@ -59,9 +59,9 @@ const SeedSchedule = () => {
     const result = seedsInCatalogue.reduce((acc, seed) => {
       let date = findPlantDate(seed)
       if(acc[date]){
-        acc[date].push(seed.name)
+        acc[date].push(seed)
       } else if (!acc[date]){
-        acc[date] = [seed.name]
+        acc[date] = [seed]
       }
       return acc
     }, {})
