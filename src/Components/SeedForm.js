@@ -18,8 +18,11 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
 
   const selectSeed = (event) => {
     event.preventDefault()
+    let addedSeedButton = document.getElementById(event.target.id)
     addToCatalogue(user.token, event.target.value)
     .then(data => {
+      addedSeedButton.innerHTML = `${event.target.id} - HAS BEEN ADDED!`
+      addedSeedButton.disabled = true
       updateCatalogue()
       })
     .catch(error => setError(error))
@@ -32,6 +35,7 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
           className='add-to-catalogue-button'
           onClick={event => selectSeed(event)}
           value={seed.id}
+          id={seed.name}
         >
             {seed.name}
         </button>
