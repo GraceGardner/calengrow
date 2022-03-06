@@ -15,7 +15,7 @@ const Dashboard = () => {
     <div className='dashboard-header'>
      <Link to={'/'}>
        <img
-       className='logo'
+       className='logo-button'
        src={logo}
        alt='Calengrow Logo'
        />

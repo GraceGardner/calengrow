@@ -23,12 +23,12 @@ const UserInfo = () => {
     return(
       <div className='user-container'>
         <div className='user-header'>
-          <h1>Hello {user.nickname}</h1>
+          <h1 className='nickname-header'>Hello {user.nickname}</h1>
         </div>
         <div className='user-details'>
-          <p><span className='bold'>zipcode:</span> {user.zipcode}</p>
-          <p><span className='bold'>hardiness zone:</span>  {user.zone}</p>
-          <p><span className='bold'>last frost:</span>  {user.last_frost_short}</p>
+          <p className='zipcode-detail'><span className='bold'>zipcode:</span> {user.zipcode}</p>
+          <p className='zone-detail'><span className='bold'>hardiness zone:</span>  {user.zone}</p>
+          <p className='frost-detail'><span className='bold'>last frost:</span>  {user.last_frost_short}</p>
           <button onClick={toggleClick}className='edit-button'>edit account</button>
         </div>
       </div>
