@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import {registerUser} from '../apiCalls.js'
 import {UserContext} from '../Contexts/UserContext'
+import {ErrorContext} from '../Contexts/ErrorContext'
 
 const SignupForm = ({setHomeError}) => {
   const [nickname, setNickname] = useState()
@@ -10,6 +11,7 @@ const SignupForm = ({setHomeError}) => {
   const [confirmation, setConfirmation] = useState()
 
   const {setUser} = useContext(UserContext)
+  const {setError} = useContext(ErrorContext)
 
   const submitUser = (event) => {
     event.preventDefault()
@@ -18,7 +20,7 @@ const SignupForm = ({setHomeError}) => {
       localStorage.setItem('user', JSON.stringify(data))
       setUser(data)
     })
-    .catch(error => setHomeError(error))
+    .catch(error => setError(error))
   }
 
   return (
