@@ -57,8 +57,12 @@ const Home = () => {
         />
         <h1>Let's get growing</h1>
         {display()}
-        {signup && <SignupForm/>}
-        {loggedIn && <LoginForm/>}
+        {signup &&
+          <SignupForm toggleSignup={toggleSignup}/>
+        }
+        {loggedIn &&
+          <LoginForm toggleLoggedIn={toggleLoggedIn}/>
+        }
       </div>
       <Grass/>
     </div>
