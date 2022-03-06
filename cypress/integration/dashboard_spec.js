@@ -1,4 +1,4 @@
-describe('sign in', () => {
+describe('dashboard', () => {
 
 
   beforeEach(() => {

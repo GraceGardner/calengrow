@@ -1,31 +1,33 @@
-describe('Error handling', () => {
+describe('catalogue view', () => {
+
 
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
+    cy.get('.login-button').click()
+      .get('.login-email-input').type('plantlady@test.com')
+      .get('.login-password-input').type('plantladyword')
+      .get('.submit-login-button').click()
+      .get('.catalogue-button').click()
+  });
+
+  it('be able to search and add seeds to users catalogue', () => {
+    cy.get('.add-seed-input').type('cucumber')
+      .get('.add-to-catalogue-button').eq(0).click()
+      .get('.add-to-catalogue-button').eq(0).contains('HAS BEEN ADDED!')
+
+      .get('.search-catalogue-input').type('strawberry')
+      .get('.catalogue-list-button').click()
+      .get('.catalogue-card-container')
+      .get('.seed-view-button').click()
+      .get('.clear-button').click()
   })
 
-  it('should handle 500 errors', () => {
-    cy.intercept('POST','https://planty-api.herokuapp.com/api/v1/users/login', {
-      statusCode: 500
-    })
-    .get('.login-button').click()
-    .get('p').contains('500 Internal Server Error')
+  it('should make a schedule for user based on catalogue', () => {
+    cy.get('.account-button').click()
+      .get('.schedule-card-container')
+      .get('.plant-button-container')
+      .get('.plant-button').eq(0).click()
+      .get('.plant-button').eq(0).contains('Planted!')
   })
 
-  // it('should handle 404 errors', () => {
-  //   cy.intercept('GET','https://discify-api.herokuapp.com/api/v1/courses', {
-  //     statusCode: 404
-  //   })
-  //   .get('.search-btn').click()
-  //   .get('p').contains('404 Not Found')
-  // })
-  //
-  //
-  // it('should handle 400 errors', () => {
-  //   cy.intercept('GET','https://discify-api.herokuapp.com/api/v1/courses', {
-  //     statusCode: 401
-  //   })
-  //   .get('.search-btn').click()
-  //   .get('p').contains('401 Unauthorized')
-  // })
 })
