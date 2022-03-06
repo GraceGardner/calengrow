@@ -1,16 +1,18 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../Contexts/UserContext'
+import {ErrorContext} from '../Contexts/ErrorContext'
 import { getFilteredSeeds, addToCatalogue } from '../apiCalls.js'
 
 const SeedForm = ({setCatalogueError, updateCatalogue}) => {
 
   const {user} = useContext(UserContext)
+  const {setError} = useContext(ErrorContext)
   const [resData, setResData] = useState([])
 
   const inputSeed = (event) => {
     getFilteredSeeds(event.target.value)
     .then(data => setResData(data))
-    .catch(error => setCatalogueError(error))
+    .catch(error => setError(error))
   }
 
   const selectSeed = (event) => {
@@ -19,7 +21,7 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
     .then(data => {
       updateCatalogue()
       })
-    .catch(error => setCatalogueError(error))
+    .catch(error => setError(error))
   }
 
   const addSeedDropdown =

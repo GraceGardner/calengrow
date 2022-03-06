@@ -11,7 +11,6 @@ export const getFilteredSeeds = (name) => {
   .then(response => handleError(response))
 }
 
-
 export const registerUser = (user) => {
   return fetch('https://planty-api.herokuapp.com/api/v1/users', {
   method: 'POST',
@@ -30,7 +29,6 @@ export const registerUser = (user) => {
 }
 
 export const login = (user) => {
-  console.log(user)
   return fetch('https://planty-api.herokuapp.com/api/v1/users/login', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},

@@ -1,17 +1,23 @@
 import React, {useContext} from 'react'
 import {UserContext} from '../Contexts/UserContext'
 
-const ScheduleCard = ({seed}) => {
-  const {user} = useContext(UserContext)
+const ScheduleCard = (card) => {
 
-  console.log(seed)
+  const displaySeedsForDate = card.seeds.map(seed => {
+      return (
+        <p>{seed}</p>
+      )
+    }
+  )
 
   return (
     <div className='next-card-container'>
      <div>
-      <p>Date</p>
+      <p>{card.date}</p>
      </div>
-     <div>Seeds for planting</div>
+     <div>
+      {displaySeedsForDate}
+     </div>
     </div>
   )
 }

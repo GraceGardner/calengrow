@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react'
 import {UserContext} from '../Contexts/UserContext'
+import {ErrorContext} from '../Contexts/ErrorContext'
 import CatalogueCard from './CatalogueCard'
 import {getCatalogue, getFilteredSeeds} from '../apiCalls.js'
 
-const SeedCatalogue = ({userCatalogue, setCatalogueError}) => {
+const SeedCatalogue = ({userCatalogue}) => {
 
   const [seedView, setSeedView] = useState(false)
   const [selectedType, setSelectedType] = useState({})
+  const {setError} = useContext(ErrorContext)
 
   const toggleSeedView = () => {
     setSeedView(!seedView)
@@ -21,12 +23,13 @@ const SeedCatalogue = ({userCatalogue, setCatalogueError}) => {
     event.preventDefault()
     getFilteredSeeds(event.target.value)
     .then(data => displaySeedCard(data))
-    .catch(error => setCatalogueError(error))
+    .catch(error => setError(error))
   }
 
   const generateCatalogue = userCatalogue.map(
     type => {
       return <button
+        key={type.id}
         onClick={event => selectType(event)}
         value={type.name}
       >

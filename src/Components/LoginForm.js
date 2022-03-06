@@ -2,11 +2,13 @@ import React, {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import {login} from '../apiCalls.js'
 import {UserContext} from '../Contexts/UserContext'
+import {ErrorContext} from '../Contexts/ErrorContext'
 
-const LoginForm = ({setHomeError}) => {
+const LoginForm = () => {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const {setUser} = useContext(UserContext)
+  const {setError} = useContext(ErrorContext)
   const navigate = useNavigate()
 
   const loginUser = (event) => {
@@ -17,7 +19,7 @@ const LoginForm = ({setHomeError}) => {
       setUser(data)
       navigate('/dashboard')
     })
-    .catch(error => setHomeError(error))
+    .catch(error => setError(error))
   }
 
   return (

@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
 import {UserContext} from '../Contexts/UserContext'
+import {ErrorContext} from '../Contexts/ErrorContext'
 import { Link } from 'react-router-dom'
 import SeedForm from './SeedForm'
 import SeedCatalogue from './SeedCatalogue'
-import ErrorModal from './ErrorModal'
 import Background from './Background'
 import Grass from './Grass'
 import logo from '../assets/calengrow-logo.png'
@@ -11,14 +11,14 @@ import {getCatalogue} from '../apiCalls.js'
 import '../Styles/CatalogueView.scss'
 
 const CatalogueView= () => {
-    const [catalogueError, setCatalogueError] = useState()
     const {user} = useContext(UserContext)
-    const[userCatalogue, setUserCatalogue] = useState([])
+    const {setError} = useContext(ErrorContext)
+    const [userCatalogue, setUserCatalogue] = useState([])
 
     const updateCatalogue = () => {
       getCatalogue(user.token)
       .then(data => setUserCatalogue(data))
-      .catch(error => setCatalogueError(error))
+      .catch(error => setError(error))
     }
 
     useEffect(() => {
@@ -41,12 +41,10 @@ const CatalogueView= () => {
        </Link>
      </div>
      <div className='catalogue-view-main'>
-      <SeedForm setCatalogueError={setCatalogueError}
-      updateCatalogue={updateCatalogue}/>
-      <SeedCatalogue userCatalogue={userCatalogue} setCatalogueError={setCatalogueError}/>
+      <SeedForm updateCatalogue={updateCatalogue}/>
+      <SeedCatalogue userCatalogue={userCatalogue} />
      </div>
     </div>
-    {catalogueError && <ErrorModal error={catalogueError}/>}
     <Background/>
     <Grass/>
     </>
