@@ -17,7 +17,10 @@ const ErrorModal = () => {
         <div className='modal-content'>
           <p className='error-message'>{error}</p>
           <Link to='/'>
-            <button onClick={clearError}>Take me Home</button>
+            <button className='error-button'
+              onClick={clearError}
+            >Take me Home
+            </button>
           </Link>
         </div>
       </div>

@@ -41,7 +41,7 @@ const ScheduleCard = (card) => {
               id={seed.id}
               value={seed.name}
               className='plant-button'
-              disabled = 'true'
+              disabled ={true}
             >
               planted!
             </button>
@@ -51,10 +51,12 @@ const ScheduleCard = (card) => {
     }
   )
 
+  const date = new Date(parseInt(card.date))
+
   return (
     <div className='schedule-card-container'>
      <div className='card-date-container'>
-      <p>{card.date}</p>
+      <p>{date.toLocaleString('default',{month: 'long'})} {date.getDate()}</p>
      </div>
      <div className='card-list-container'>
       {displaySeedsForDate}
