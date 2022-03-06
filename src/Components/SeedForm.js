@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { UserContext } from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
 import { getFilteredSeeds, addToCatalogue } from '../apiCalls.js'
+import '../Styles/SeedForm.scss'
 
 const SeedForm = ({setCatalogueError, updateCatalogue}) => {
 
@@ -28,6 +29,7 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
     resData.map(seed => {
       return (
         <button
+          className='add-to-catalogue-button'
           onClick={event => selectSeed(event)}
           value={seed.id}
         >
@@ -38,18 +40,19 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
 
   return (
     <div className='seed-form-container'>
-     <div>
+     <div className='seed-form-header-container'>
       <h1>Grow your seed collection</h1>
      </div>
-     <form>
-      <input
-        type="text"
-        placeholder="Seed Name"
-        onChange={event => inputSeed(event)}
-      />
-        <div className='seed-dropdown'>
-          {resData.length > 0 && addSeedDropdown}
-        </div>
+     <form className='add-seed-form'>
+       <input
+         className='add-seed-input'
+         type="text"
+         placeholder="Seed Name"
+         onChange={event => inputSeed(event)}
+       />
+       <div className='seed-dropdown'>
+         {resData.length > 0 && addSeedDropdown}
+       </div>
      </form>
     </div>
   )

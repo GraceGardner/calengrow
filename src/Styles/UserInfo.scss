@@ -21,6 +21,10 @@
   @include turquoise-button();
 }
 
+.edit-button:hover {
+  @include button-hover();
+}
+
 .user-details {
   padding: 3%;
   height: 70%;
@@ -31,4 +35,5 @@
 
 .bold {
   font-weight: bold;
+  margin-right: 1vw;
 }

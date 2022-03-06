@@ -1,2 +1,43 @@
 @import './_variables';
 @import './_mixins';
+
+.seed-form-container {
+  border: 3px solid black;
+  background-color: $white-opc;
+  width: 40vw;
+  height: 50vh;
+  margin: 5%;
+}
+
+.seed-form-header-container {
+  border-bottom: 3px solid black;
+  background-color: $white-opc;
+  width: 100%;
+  margin: 0;
+  padding: .15%;
+}
+
+// .add-seed-form {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.add-seed-input {
+  margin: 2%;
+  width: 50%;
+}
+
+.add-to-catalogue-button {
+  @include list-button();
+}
+
+.add-to-catalogue-button:hover {
+  @include list-button-hover();
+}
+
+.seed-dropdown {
+  width: 100%;
+  height: 30vh;
+  overflow-y: scroll;
+}

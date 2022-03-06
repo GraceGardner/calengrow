@@ -2,9 +2,39 @@
 @import './_mixins';
 
 .catalogue-view-container {
-
+  position: absolute;
+  height: 100vh;
 }
 
 .catalogue-view-main {
   display: flex;
+  align-items: center;
+}
+
+.catalogue-view-header {
+  @include header();
+}
+
+.account-button {
+  @include green-button();
+  margin: 20%;
+  width: 15vw;
+}
+
+.catalogue-card-container {
+  padding-left: 1vw;
+  width: 100%;
+  height: 32vh;
+  overflow-y: scroll;
+}
+
+.seed-view-button {
+  @include turquoise-button();
+  width: 80%;
+}
+
+.seed-view-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

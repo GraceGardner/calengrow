@@ -28,7 +28,7 @@ const CatalogueView= () => {
   return (
     <>
     <div className='catalogue-view-container'>
-     <div>
+     <div className='catalogue-view-header'>
       <Link to={'/'}>
         <img
         className='logo'

@@ -13,7 +13,7 @@
   color: white;
   font-weight: bold;
   font-size: 1.2em;
-  padding: 2%;
+  padding: 1%;
   @include box-shadow();
 }
 
@@ -28,6 +28,11 @@
   @include box-shadow();
 }
 
+@mixin button-hover() {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 @mixin list-button() {
   background: transparent;
   border: none;
@@ -35,4 +40,26 @@
   font-weight: bold;
   font-size: 1.2em;
   padding: 2%;
+  width: 100%;
+  text-align: left;
+}
+
+@mixin list-button-hover() {
+  background: transparent;
+  background-color: $turquoise;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: left;
+  padding: 2%;
+  @include box-shadow();
+  width: 100%;
+}
+
+@mixin header() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
