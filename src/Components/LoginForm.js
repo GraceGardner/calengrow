@@ -5,7 +5,7 @@ import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
 import '../Styles/LoginForm.scss'
 
-const LoginForm = () => {
+const LoginForm = ({toggleLoggedIn}) => {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const {setUser} = useContext(UserContext)
@@ -18,20 +18,23 @@ const LoginForm = () => {
     .then(data => {
       localStorage.setItem('user', JSON.stringify(data))
       setUser(data)
+      toggleLoggedIn()
       navigate('/dashboard')
     })
     .catch(error => setError(error))
   }
 
   return (
-    <div className='signup-container'>
-      <form className='signup-form'>
+    <div className='login-container'>
+      <form className='login-form'>
         <input
+          className='login-email-input'
           type='text'
           placeholder='email'
           onChange={event => setUserEmail(event.target.value)}
           ></input>
         <input
+          className='login-password-input'
           type='password'
           placeholder='password'
           onChange={event => setUserPassword(event.target.value)}

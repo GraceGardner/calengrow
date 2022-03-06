@@ -26,16 +26,19 @@ const UserForm = ({toggleClick}) => {
     <div className='user-update-container'>
       <form className='update-user-form'>
         <input
+          className='update-user-email'
           type='text'
           placeholder='email'
           onChange={event => setNewEmail(event.target.value)}
         ></input>
         <input
+        className='update-user-nickname'
         type='text'
         placeholder='nickname'
         onChange={event => setNewNickname(event.target.value)}
         ></input>
           <input
+          className='update-user-zipcode'
           type='text'
           placeholder='zipcode'
           onChange={event => setNewZipcode(event.target.value)}

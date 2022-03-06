@@ -81,7 +81,8 @@ const SeedSchedule = () => {
 
   return (
     <div className='schedule-container'>
-      {seedsInCatalogue.length < 1 && <h2>No Seeds to Plant</h2>}
+      {seedsInCatalogue.length < 1 &&
+        <h2 className='no-seeds'>No Seeds to Plant</h2>}
       {seedsInCatalogue.length > 0 && displaySchedule()}
     </div>
   )

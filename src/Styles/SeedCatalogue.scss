@@ -35,6 +35,14 @@
   overflow-y: scroll;
 }
 
+.clear-button {
+  @include turquoise-button();
+}
+
+.clear-button:hover {
+  @include button-hover();
+}
+
 .catalogue-list-button {
   @include list-button();
 }

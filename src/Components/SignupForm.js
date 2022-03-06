@@ -4,7 +4,7 @@ import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
 import '../Styles/SignupForm.scss'
 
-const SignupForm = ({setHomeError}) => {
+const SignupForm = ({toggleSignup}) => {
   const [nickname, setNickname] = useState()
   const [zipcode, setZipcode] = useState()
   const [email, setEmail] = useState()
@@ -19,6 +19,7 @@ const SignupForm = ({setHomeError}) => {
     registerUser({nickname, zipcode, email, password, confirmation})
     .then(data => {
       localStorage.setItem('user', JSON.stringify(data))
+      toggleSignup()
       setUser(data)
     })
     .catch(error => setError(error))
@@ -28,26 +29,31 @@ const SignupForm = ({setHomeError}) => {
     <div className='signup-container'>
       <form className='signup-form'>
         <input
+          className='signup-name-input'
           type='text'
           placeholder='nickname'
           onChange={event => setNickname(event.target.value)}
         ></input>
         <input
+          className='signup-zipcode-input'
           type='text'
           placeholder='zipcode'
           onChange={event => setZipcode(event.target.value)}
           ></input>
         <input
+          className='signup-email-input'
           type='text'
           placeholder='email'
           onChange={event => setEmail(event.target.value)}
           ></input>
         <input
+          className='signup-password-input'
           type='password'
           placeholder='password'
           onChange={event => setPassword(event.target.value)}
         ></input>
         <input
+          className='signup-confirm-password-input'
           type='password'
           placeholder='confirm password'
           onChange={event => setConfirmation(event.target.value)}
