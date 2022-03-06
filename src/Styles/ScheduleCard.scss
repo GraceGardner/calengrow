@@ -45,6 +45,7 @@
 
 .plant-button {
   @include green-button();
+  margin: 1%;
 }
 
 .plant-button:hover {
@@ -53,4 +54,9 @@
 
 .plant-button:disabled {
   @include button-hover();
+}
+
+.plant-button-container {
+  display: flex;
+  align-items: center;
 }

@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import {registerUser} from '../apiCalls.js'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
+import '../Styles/SignupForm.scss'
 
 const SignupForm = ({setHomeError}) => {
   const [nickname, setNickname] = useState()
@@ -25,7 +26,7 @@ const SignupForm = ({setHomeError}) => {
 
   return (
     <div className='signup-container'>
-      <form>
+      <form className='signup-form'>
         <input
           type='text'
           placeholder='nickname'
@@ -51,7 +52,11 @@ const SignupForm = ({setHomeError}) => {
           placeholder='confirm password'
           onChange={event => setConfirmation(event.target.value)}
         ></input>
-        <button onClick={event => submitUser(event)} type="submit">sign up</button>
+        <button
+          onClick={event => submitUser(event)}
+          type="submit"
+          className='submit-signup-button'
+        >sign up</button>
       </form>
     </div>
   )

@@ -32,3 +32,7 @@
 .error-button {
   @include turquoise-button();
 }
+
+.error-button {
+  @include button-hover();
+}

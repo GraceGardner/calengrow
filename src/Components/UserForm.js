@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
 import {patchUser} from '../apiCalls.js'
+import '../Styles/UserForm.scss'
 
 const UserForm = ({toggleClick}) => {
   const {user, setUser} = useContext(UserContext)
@@ -22,8 +23,8 @@ const UserForm = ({toggleClick}) => {
     .catch(error => setError(error))
   }
   return (
-    <div className='user-container'>
-      <form>
+    <div className='user-update-container'>
+      <form className='update-user-form'>
         <input
           type='text'
           placeholder='email'
@@ -39,7 +40,11 @@ const UserForm = ({toggleClick}) => {
           placeholder='zipcode'
           onChange={event => setNewZipcode(event.target.value)}
         ></input>
-        <button onClick={submitUpdate}type="submit">Update</button>
+        <button
+          onClick={submitUpdate}
+          type="submit"
+          className='update-user-button'
+        >Update</button>
       </form>
     </div>
   )
