@@ -20,6 +20,7 @@ const ScheduleCard = (card) => {
   }
 
   const displaySeedsForDate = card.seeds.map(seed => {
+    if(!seed.planted){
       return (
         <div key={seed.id} className='plant-button-container'>
           <p>{seed.name}</p>
@@ -32,7 +33,21 @@ const ScheduleCard = (card) => {
             plant
           </button>
         </div>
-      )
+      )} else if (seed.planted) {
+        return (
+          <div key={seed.id} className='plant-button-container'>
+            <p>{seed.name}</p>
+            <button
+              id={seed.id}
+              value={seed.name}
+              className='plant-button'
+              disabled = 'true'
+            >
+              planted!
+            </button>
+          </div>
+        )
+      }
     }
   )
 

@@ -42,3 +42,15 @@
     overflow-y: scroll;
   }
 }
+
+.plant-button {
+  @include green-button();
+}
+
+.plant-button:hover {
+  @include button-hover();
+}
+
+.plant-button:disabled {
+  @include button-hover();
+}
