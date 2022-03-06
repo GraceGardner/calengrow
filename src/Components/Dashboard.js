@@ -26,7 +26,12 @@ const Dashboard = () => {
     </div>
     <div className='dashboard-main'>
      <UserInfo/>
-     <SeedSchedule/>
+     <div className='schedule-scroll-container'>
+      <div className='schedule-scroll-header-container'>
+        <h2>Your Planting Schedule</h2>
+      </div>
+      <SeedSchedule/>
+     </div>
     </div>
     </div>
     <Background/>

@@ -9,9 +9,32 @@
 .dashboard-header {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100vw;
+}
+
+.schedule-scroll-header-container {
+  width: 40vw;
+  border: 3px solid black;
+  background-color: $white-opc;
 }
 
 .dashboard-main {
   display: flex;
+  align-items: center
+}
+
+.catalogue-button {
+  @include green-button();
+  margin: 20%;
+  width: 15vw;
+}
+
+.schedule-scroll-container {
+  overflow-y: scroll;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
