@@ -1,10 +1,77 @@
 @import './_variables';
 @import './_mixins';
 
-.catalogue-view-container {
+@media only screen and (min-width: 992px){
+  .catalogue-view-main {
+    display: flex;
+    align-items: center;
+  }
 
+  .catalogue-view-header {
+    @include header();
+  }
+
+  .account-button {
+    @include green-button();
+    margin: 20%;
+    width: 15vw;
+  }
 }
 
-.catalogue-view-main {
+@media only screen and (max-width: 991px){
+  .catalogue-view-main {
+    width: 100vw;
+    height: 70vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 80vw;
+  }
+
+  .catalogue-view-header {
+    margin-top: 2vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .account-button {
+    @include green-button();
+    width: 65vw;
+  }
+}
+
+.account-button:hover {
+  @include button-hover();
+}
+
+.catalogue-view-container {
+  position: absolute;
+  height: 100vh;
+}
+
+.catalogue-card-container {
+  padding-left: 1vw;
+  width: 100%;
+  height: 32vh;
+  overflow-y: scroll;
+}
+
+.seed-view-button {
+  @include turquoise-button();
+  width: 80%;
+}
+
+.seed-view-button:hover {
+  @include button-hover();
+}
+
+.seed-view-button-container {
+  width: 100%;
   display: flex;
+  justify-content: center;
 }

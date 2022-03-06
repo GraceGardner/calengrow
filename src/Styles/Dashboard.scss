@@ -1,17 +1,81 @@
 @import './_variables';
 @import './_mixins';
 
+@media only screen and (min-width: 992px) {
+
+  .dashboard-header {
+    @include header();
+  }
+
+  .schedule-scroll-container {
+    overflow-y: scroll;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .schedule-scroll-header-container {
+    width: 40vw;
+    border: 3px solid black;
+    background-color: $white-opc;
+  }
+
+  .dashboard-main {
+    display: flex;
+    align-items: center
+  }
+
+  .catalogue-button {
+    @include green-button();
+    margin: 20%;
+    width: 15vw;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .dashboard-header {
+    margin-top: 2vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .catalogue-button {
+    @include green-button();
+    width: 65vw;
+  }
+
+  .logo {
+    width: 80vw;
+  }
+
+  .dashboard-main {
+    width: 100vw;
+    height: 70vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .schedule-scroll-container {
+    overflow-y: scroll;
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+}
+
 .dashboard-container {
   position: absolute;
   height: 100vh;
 }
 
-.dashboard-header {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
-
-.dashboard-main {
-  display: flex;
+.catalogue-button:hover {
+  @include button-hover();
 }

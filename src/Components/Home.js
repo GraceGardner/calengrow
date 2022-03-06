@@ -2,9 +2,9 @@ import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/calengrow-logo.png'
 import SidePanel from './SidePanel'
-import NextCard from './NextCard'
 import SignupForm from './SignupForm'
 import LoginForm from './LoginForm'
+import Grass from './Grass'
 import {UserContext} from '../Contexts/UserContext'
 import '../Styles/Home.scss'
 
@@ -28,10 +28,6 @@ const Home = () => {
         <Link to={'/dashboard'}>
           <button className='account-button'>your account</button>
         </Link>
-        <div className='next-planting'>
-        <h2>Your next planting</h2>
-        <NextCard />
-        </div>
         </>
       )
     } else {
@@ -59,6 +55,7 @@ const Home = () => {
         {signup && <SignupForm/>}
         {loggedIn && <LoginForm/>}
       </div>
+      <Grass/>
     </div>
   )
 }

@@ -1,2 +1,44 @@
 @import './_variables';
 @import './_mixins';
+
+@media only screen and (min-width: 992px) {
+  .schedule-card-container {
+    border: 3px solid black;
+    background-color: $white-opc;
+    width: 40vw;
+    display: flex;
+    margin-top: 1vh;
+  }
+
+  .card-date-container {
+    border-right: 3px solid black;
+    background-color: $white-opc;
+    width: 10vw;
+  }
+
+  .card-list-container {
+    padding-left: 2vw;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .schedule-card-container {
+    border: 3px solid black;
+    background-color: $white-opc;
+    width: 90vw;
+    display: flex;
+    margin-top: 1vh;
+  }
+
+  .card-date-container {
+    border-right: 3px solid black;
+    background-color: $white-opc;
+    width: 30vw;
+  }
+
+  .card-list-container {
+    padding-left: 2vw;
+    height: 20vh;
+    overflow-y: scroll;
+  }
+}
