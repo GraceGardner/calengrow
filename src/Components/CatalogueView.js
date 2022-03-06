@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 import SeedForm from './SeedForm'
 import SeedCatalogue from './SeedCatalogue'
 import Background from './Background'
@@ -14,6 +15,7 @@ const CatalogueView= () => {
     const {user} = useContext(UserContext)
     const {setError} = useContext(ErrorContext)
     const [userCatalogue, setUserCatalogue] = useState([])
+    const navigate = useNavigate()
 
     const updateCatalogue = () => {
       getCatalogue(user.token)
@@ -22,6 +24,9 @@ const CatalogueView= () => {
     }
 
     useEffect(() => {
+      if(!user.token){
+        return navigate('/')
+      }
       updateCatalogue()
     },[])
 

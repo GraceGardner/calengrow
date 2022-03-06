@@ -11,7 +11,7 @@ import '../Styles/Home.scss'
 const Home = () => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [signup, setSignup] = useState(false)
-  const {user} = useContext(UserContext)
+  const {user, logout} = useContext(UserContext)
 
   const toggleSignup = () => {
     setSignup(!signup)
@@ -28,6 +28,10 @@ const Home = () => {
         <Link to={'/dashboard'}>
           <button className='account-button'>your account</button>
         </Link>
+        <button
+          className='home-logout-button'
+          onClick={logout}
+        >logout</button>
         </>
       )
     } else {
@@ -39,7 +43,6 @@ const Home = () => {
       )
     }
   }
-
 
   return (
     <div className='home-container'>

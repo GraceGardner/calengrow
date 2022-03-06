@@ -123,3 +123,14 @@ export const patchUser = (user) => {
   })
   .then(response => handleError(response))
 }
+
+export const logoutUser = (token) => {
+  return fetch('https://planty-api.herokuapp.com/api/v1/users/logout', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `${token}`
+    }
+  })
+  .then(response => handleError(response))
+}
