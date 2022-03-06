@@ -4,6 +4,7 @@ import logo from '../assets/calengrow-logo.png'
 import SidePanel from './SidePanel'
 import SignupForm from './SignupForm'
 import LoginForm from './LoginForm'
+import Grass from './Grass'
 import {UserContext} from '../Contexts/UserContext'
 import '../Styles/Home.scss'
 
@@ -54,6 +55,7 @@ const Home = () => {
         {signup && <SignupForm/>}
         {loggedIn && <LoginForm/>}
       </div>
+      <Grass/>
     </div>
   )
 }
