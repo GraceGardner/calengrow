@@ -79,3 +79,19 @@ export const getCatalogue = (token) => {
   })
   .then(response => handleError(response))
 }
+
+export const patchPlant = (token, id) => {
+  return fetch(`https://planty-api.herokuapp.com/api/v1/seed_catalogs/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `${token}`
+    },
+    body: JSON.stringify({
+      "seed_catalog": {
+        "planted": true
+      }
+    })
+  })
+  .then(response => handleError(response))
+}
