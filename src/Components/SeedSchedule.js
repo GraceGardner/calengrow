@@ -1,24 +1,26 @@
 import React, {useContext, useEffect, useState} from 'react'
 import ScheduleCard from './ScheduleCard'
 import {UserContext} from '../Contexts/UserContext'
+import {ErrorContext} from '../Contexts/ErrorContext'
 import {getCatalogue} from '../apiCalls'
 
-const SeedSchedule = ({setDashboardError}) => {
+const SeedSchedule = () => {
   const {user} = useContext(UserContext)
+  const {setError} = useContext(ErrorContext)
   const [seedsInCatalogue, setSeedsInCatalogue] = useState([])
 
   useEffect(() => {
     if(user.token) {
     getCatalogue(user.token)
     .then(data => setSeedsInCatalogue(data))
-    .catch(error => setDashboardError(error))
+    .catch(error => setError(error))
     }
   })
 
   const displaySchedule =
     seedsInCatalogue.map(seed => {
       return (
-        <ScheduleCard seed={seed}/>
+        <ScheduleCard key={seed.id} seed={seed}/>
       )
     })
 

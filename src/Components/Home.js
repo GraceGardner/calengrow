@@ -1,7 +1,6 @@
 import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/calengrow-logo.png'
-import ErrorModal from './ErrorModal'
 import SidePanel from './SidePanel'
 import NextCard from './NextCard'
 import SignupForm from './SignupForm'
@@ -10,7 +9,6 @@ import {UserContext} from '../Contexts/UserContext'
 import '../Styles/Home.scss'
 
 const Home = () => {
-  const [homeError, setHomeError] = useState()
   const [loggedIn, setLoggedIn] = useState(false)
   const [signup, setSignup] = useState(false)
   const {user} = useContext(UserContext)
@@ -58,10 +56,9 @@ const Home = () => {
         />
         <h1>Let's get growing</h1>
         {display()}
-        {signup && <SignupForm setHomeError={setHomeError}/>}
-        {loggedIn && <LoginForm setHomeError={setHomeError}/>}
+        {signup && <SignupForm/>}
+        {loggedIn && <LoginForm/>}
       </div>
-      {homeError = <ErrorModal error={homeError}/>}
     </div>
   )
 }
