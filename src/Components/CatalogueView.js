@@ -28,7 +28,7 @@ const CatalogueView= () => {
         return navigate('/')
       }
       updateCatalogue()
-    },[])
+    }, [])
 
   return (
     <>

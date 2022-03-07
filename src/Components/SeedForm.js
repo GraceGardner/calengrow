@@ -4,7 +4,7 @@ import {ErrorContext} from '../Contexts/ErrorContext'
 import { getFilteredSeeds, addToCatalogue } from '../apiCalls.js'
 import '../Styles/SeedForm.scss'
 
-const SeedForm = ({setCatalogueError, updateCatalogue}) => {
+const SeedForm = ({updateCatalogue}) => {
 
   const {user} = useContext(UserContext)
   const {setError} = useContext(ErrorContext)
@@ -18,9 +18,9 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
 
   const selectSeed = (event) => {
     event.preventDefault()
-    let addedSeedButton = document.getElementById(event.target.id)
-    addToCatalogue(user.token, event.target.value)
+    addToCatalogue(user.token, event.target.id)
     .then(data => {
+      let addedSeedButton = document.getElementById(event.target.id)
       addedSeedButton.innerHTML = `${event.target.name} - HAS BEEN ADDED!`
       addedSeedButton.disabled = true
       updateCatalogue()
@@ -34,7 +34,7 @@ const SeedForm = ({setCatalogueError, updateCatalogue}) => {
         <button
           className='add-to-catalogue-button'
           onClick={event => selectSeed(event)}
-          value={seed.id}
+          key={seed.id}
           name={seed.name}
           id={seed.id}
         >
