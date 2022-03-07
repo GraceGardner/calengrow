@@ -17,6 +17,22 @@
     justify-content: space-around;
     padding-bottom: 10vh;
   }
+
+  .account-buttons-container,
+  .user-buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .home-logout-button {
+    @include green-button();
+    padding: 1%;
+    margin: 20%;
+    width: 10vw;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -36,22 +52,29 @@
     justify-content: space-evenly;
     padding-bottom: 10vh;
   }
-}
-.account-buttons-container,
-.user-buttons-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+
+  .logo {
+    width: 80vw;
+  }
+
+  .account-buttons-container,
+  .user-buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-logout-button {
+    @include green-button();
+    padding: 1%;
+    margin: 5%;
+    width: 30vw;
+  }
 }
 
-.home-logout-button {
-  @include green-button();
-  padding: 1%;
-  margin: 20%;
-  width: 10vw;
-}
+
+
 
 .sign-up-button,
 .login-button,

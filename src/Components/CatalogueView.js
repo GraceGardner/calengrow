@@ -36,7 +36,7 @@ const CatalogueView= () => {
      <div className='catalogue-view-header'>
       <Link to={'/'}>
         <img
-        className='logo-buton'
+        className='logo-button'
         src={logo}
         alt='Calengrow Logo'
         />
