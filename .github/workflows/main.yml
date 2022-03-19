@@ -8,10 +8,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - run: CI=false
       - name: cypress run
         uses: cypress-io/github-action@v2
-        env:
-          CI: false
         with:
           build: npm run build
           start: npm start
