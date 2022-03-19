@@ -21,12 +21,12 @@ describe('catalogue view', () => {
       })
     cy.get('.add-seed-input').type('cosmo')
       .get('.add-to-catalogue-button').eq(0).click()
-
-      .get('.search-catalogue-input').type('cucumber')
-      .get('.catalogue-list-button').eq(0).click()
-      .get('.catalogue-card-container')
-      .get('.seed-view-button').click()
-      .get('.clear-button').click()
+      // 
+      // .get('.search-catalogue-input').type('cucumber')
+      // .get('.catalogue-list-button').eq(0).click()
+      // .get('.catalogue-card-container')
+      // .get('.seed-view-button').click()
+      // .get('.clear-button').click()
   })
 
   it('should make a schedule for user based on catalogue', () => {
