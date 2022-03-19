@@ -1,5 +1,6 @@
 const handleError = (response) => {
   if(!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw `${response.status} ${response.statusText}`
   } else {
     return response.json()

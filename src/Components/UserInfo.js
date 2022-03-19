@@ -13,6 +13,7 @@ const UserInfo = () => {
     if(!user.token){
       navigate('/')
     }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const toggleClick = () => {

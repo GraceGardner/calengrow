@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
-import {patchPlant, getFilteredSeeds} from '../apiCalls.js'
+import {patchPlant} from '../apiCalls.js'
 import '../Styles/ScheduleCard.scss'
 
 const ScheduleCard = (card) => {
@@ -33,7 +33,7 @@ const ScheduleCard = (card) => {
             plant
           </button>
         </div>
-      )} else if (seed.planted) {
+      )} else {
         return (
           <div key={seed.id} className='plant-button-container'>
             <p>{seed.name}</p>
