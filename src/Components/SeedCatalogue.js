@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import {UserContext} from '../Contexts/UserContext'
 import {ErrorContext} from '../Contexts/ErrorContext'
 import CatalogueCard from './CatalogueCard'
-import {getCatalogue, getFilteredSeeds, getFilteredUserSeeds} from '../apiCalls.js'
+import {getFilteredSeeds, getFilteredUserSeeds} from '../apiCalls.js'
 import '../Styles/SeedCatalogue.scss'
 
 const SeedCatalogue = ({userCatalogue, setUserCatalogue, updateCatalogue}) => {
@@ -29,6 +29,7 @@ const SeedCatalogue = ({userCatalogue, setUserCatalogue, updateCatalogue}) => {
     .then(data => {
       displaySeedCard(data)
       setHeader('seed details')
+      console.log(header)
     })
     .catch(error => setError(error))
   }

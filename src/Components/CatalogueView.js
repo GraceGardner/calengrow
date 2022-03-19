@@ -28,6 +28,7 @@ const CatalogueView= () => {
         return navigate('/')
       }
       updateCatalogue()
+          // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
   return (
